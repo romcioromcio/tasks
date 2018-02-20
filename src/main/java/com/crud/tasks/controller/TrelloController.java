@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
@@ -25,14 +26,20 @@ public class TrelloController {
     private TrelloClient trelloClient;
 
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-    public void getTrelloBoards() {
+    public List<TrelloBoardDto> getTrelloBoards() {
 
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 
-        trelloBoards.stream().filter(trelloBoardDto -> trelloBoardDto.getName().contains("Kodilla")).
-                forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
-
-        //filter(trelloBoardDto -> trelloBoardDto.getId().equals()
-        //trelloBoards.forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
+        trelloBoards=trelloBoards.stream().
+                filter(trelloBoardDto -> trelloBoardDto.getName().contains("Kodilla")).
+                filter(trelloBoardDto -> !trelloBoardDto.getId().isEmpty()).
+                filter(trelloBoardDto -> !trelloBoardDto.getName().isEmpty()).
+                map(t -> {
+                    System.out.println(t.getId() + " " + t.getName());
+                    return t;
+                }).
+                collect(Collectors.toList());
+                //forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
+        return trelloBoards;
     }
 }
