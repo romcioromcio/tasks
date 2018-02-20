@@ -39,7 +39,6 @@ public class TrelloController {
                     return t;
                 }).
                 collect(Collectors.toList());
-                //forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
         return trelloBoards;
     }
 }
