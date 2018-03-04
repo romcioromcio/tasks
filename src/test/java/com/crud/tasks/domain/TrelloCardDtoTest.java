@@ -8,6 +8,7 @@ public class TrelloCardDtoTest {
 
     @Test
     public void shuldTrelloCardDtoTest() {
+
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("Test", "abc","xvc", "1");
 

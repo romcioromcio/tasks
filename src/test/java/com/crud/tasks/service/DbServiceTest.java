@@ -53,6 +53,7 @@ public class DbServiceTest {
     }
     @Test
     public void findAllById (){
+
         //Given
         Optional <Task> task = Optional.of(new Task (5L, "abc", "pol"));
         when(repository.findAllById(any(Long.class))).thenReturn(task);
@@ -65,6 +66,7 @@ public class DbServiceTest {
     }
     @Test
     public void saveTask(){
+
         //Given
         Task task1 = new Task(1L, "test1", "abc");
 
@@ -81,6 +83,7 @@ public class DbServiceTest {
     }
     @Test
     public void shouldDelete() {
+
         //when
         dbService.deleteTask(ArgumentMatchers.anyLong());
         //then

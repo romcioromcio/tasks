@@ -21,6 +21,7 @@ public class TrelloMapperTest {
 
     @Test
     public void mapToBoardsDtoTest() {
+
         //Given
         TrelloList trelloList = new TrelloList("List1 Test", "Test a", true);
         List<TrelloList> trelloLists = new ArrayList<>();

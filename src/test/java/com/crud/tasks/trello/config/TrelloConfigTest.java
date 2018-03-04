@@ -18,6 +18,7 @@ public class TrelloConfigTest {
 
     @Test
     public void getUserName() {
+
         TrelloConfig trelloConfig = new TrelloConfig();
 
         String userName = trelloConfig.getUserName();
@@ -26,6 +27,7 @@ public class TrelloConfigTest {
     }
     @Test
     public void getTrelloAppKey() {
+
         TrelloConfig trelloConfig = new TrelloConfig();
 
         String trelloAppKey = trelloConfig.getTrelloAppKey();
@@ -35,6 +37,7 @@ public class TrelloConfigTest {
 
     @Test
     public void getTrelloToken() {
+
         TrelloConfig trelloConfig = new TrelloConfig();
 
         String trelloToken = trelloConfig.getTrelloToken();
@@ -44,6 +47,7 @@ public class TrelloConfigTest {
 
     @Test
     public void getTrelloApiEndpoint() {
+
         TrelloConfig trelloConfig = new TrelloConfig();
 
         String trelloApiEndpoint = trelloConfig.getTrelloApiEndpoint();

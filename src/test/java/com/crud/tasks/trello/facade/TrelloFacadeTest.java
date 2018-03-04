@@ -33,6 +33,7 @@ public class TrelloFacadeTest {
 
     @Test
     public void shouldFetchEmptyList() {
+
         //Given
         List<TrelloListDto> trelloLists = new ArrayList<>();
         trelloLists.add(new TrelloListDto("1", "test_list", false));
@@ -61,6 +62,7 @@ public class TrelloFacadeTest {
 
     @Test
     public void shouldFetchTrelloBoards() {
+
         //Given
         List<TrelloListDto> trelloLists = new ArrayList<>();
         trelloLists.add(new TrelloListDto("1", "my_list", false));

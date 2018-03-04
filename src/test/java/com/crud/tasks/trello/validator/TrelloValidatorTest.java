@@ -26,6 +26,7 @@ public class TrelloValidatorTest {
 
     @Test
     public void validateTrelloBoardsTest() {
+
         //Given
         TrelloList trelloList1 = new TrelloList("1","Test list 1", true);
         TrelloList trelloList2 = new TrelloList("2", "Test list 2", false);

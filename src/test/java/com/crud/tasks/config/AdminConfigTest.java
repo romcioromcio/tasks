@@ -12,7 +12,6 @@ public class AdminConfigTest {
     @Test
     public void getAdminMailTest() {
         AdminConfig adminConfig = new AdminConfig();
-
         String adminMail = adminConfig.getAdminMail();
 
         System.out.println(adminMail);

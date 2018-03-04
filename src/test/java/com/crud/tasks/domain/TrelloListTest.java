@@ -8,6 +8,7 @@ public class TrelloListTest {
 
     @Test
     public void shouldTrelloListTest(){
+
         //Given
         TrelloList trelloList = new TrelloList("1","Test TrelloList", true);
 

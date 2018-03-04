@@ -23,6 +23,7 @@ public class TaskMapperTest {
 
     @Test
     public void mapToTaskTest() {
+
         //Given
         Task task = new Task(1L, "Test test1", "Test:_Map_to_task");
 
@@ -37,6 +38,7 @@ public class TaskMapperTest {
 
     @Test
     public void mapToTaskDtoTest() {
+
         //Given
         TaskDto taskDto = new TaskDto(1L,"Test test1","Test:_Map_to_taskDto");
 
@@ -51,6 +53,7 @@ public class TaskMapperTest {
 
     @Test
     public void mapToTaskDtoListTest() {
+
         //Given
         List<Task> taskList = new ArrayList<>();
         Task task = new Task(1L,"Test test1","Test:_Map_to_taskDto");

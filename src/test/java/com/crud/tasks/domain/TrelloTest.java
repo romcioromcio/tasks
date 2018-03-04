@@ -8,6 +8,7 @@ public class TrelloTest {
 
     @Test
     public void testTrelloTest() {
+
         //Given
         Trello trello = new Trello(1,2);
 
