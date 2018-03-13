@@ -3,7 +3,6 @@ package com.crud.tasks.trello.validator;
 import com.crud.tasks.domain.TrelloBoard;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCard;
-import com.crud.tasks.trello.facade.TrelloFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
