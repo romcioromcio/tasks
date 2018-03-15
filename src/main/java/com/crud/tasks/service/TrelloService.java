@@ -15,10 +15,9 @@ import static java.util.Optional.ofNullable;
 
 @Service
 public class TrelloService {
-    private static final String SUBJECT = "Tasks: New Trello card";
 
-    @Autowired
-    private AdminConfig adminConfig;
+    private static final String SUBJECT = "Tasks: New Trello card.";
+    private static final String MAIL_TYPE = "build";
 
     @Autowired
     private TrelloClient trelloClient;
@@ -26,14 +25,20 @@ public class TrelloService {
     @Autowired
     private SimpleEmailService emailService;
 
-    public List<TrelloBoardDto> fetchTrelloBoards(){
+    @Autowired
+    private AdminConfig adminConfig;
+
+    public List<TrelloBoardDto> fetchTrelloBoards() {
         return trelloClient.getTrelloBoards();
     }
 
-    public CreatedTrelloCardDto createdTrelloCard(final TrelloCardDto trelloCardDto){
+    public CreatedTrelloCardDto createdTrelloCard(final TrelloCardDto trelloCardDto) {
         CreatedTrelloCardDto newCard = trelloClient.createNewCard(trelloCardDto);
-        ofNullable(newCard).ifPresent(card -> emailService.send(new Mail(adminConfig.getAdminMail(), SUBJECT,
-                "New Card: " + card.getName() + "has ben created on your Trello account")));
-                return newCard;
+        ofNullable(newCard).ifPresent(card -> emailService.send(new Mail(
+                adminConfig.getAdminMail(),
+                SUBJECT,
+                "New card: " + card.getName() + " has been created on your Trello account",
+                MAIL_TYPE)));
+        return newCard;
     }
 }

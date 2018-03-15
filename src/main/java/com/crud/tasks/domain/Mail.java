@@ -11,5 +11,6 @@ public class Mail {
     private String subject;
     private String message;
     //private String toCc;
+    private String mailType;
 
 }
